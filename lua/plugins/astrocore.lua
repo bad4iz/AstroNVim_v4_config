@@ -83,7 +83,6 @@ return {
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
         ["<leader>le"] = { "<cmd>!eslint --fix %<cr>", desc = "Eslint fix" },
-        ["gh"] = { "<cmd>UndotreeToggle<cr>", desc = "History" },
         -- Navigate buffers
         ["<Tab>"] = { "<cmd>bnext<CR>", desc = "Next Buffer" },
         ["<S-Tab>"] = { "<cmd>bprevious<CR>", desc = "Prev buffer" },
