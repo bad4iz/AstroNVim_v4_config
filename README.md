@@ -1,4 +1,14 @@
-# AstroNvim Template
+# AstroNvim Template Bad4iz
+
+## keymaps
+
+| сочетание клавиш | операция                |
+| ---------------- | ----------------------- |
+| `<leader>qq`     | Закрыть nvim            |
+| `gh`             | Показать дерево истории |
+| `<Leader>fu`     | Найти историю           |
+
+---
 
 **NOTE:** This is for AstroNvim v4+
 
