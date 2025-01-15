@@ -52,3 +52,11 @@ git clone https://github.com/<your_user>/<your_repository> ~/.config/nvim
 ```shell
 nvim
 ```
+
+## 🛠️ remove cache
+
+```shell
+rm -rf ~/.local/share/nvim
+rm -rf  ~/.local/state/nvim
+rm -rf  ~/.cache/nvim
+```
