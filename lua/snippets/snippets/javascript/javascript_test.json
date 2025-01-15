@@ -9,7 +9,7 @@
     "body": [
       "import { vi } from 'vitest';",
       "",
-      "import { ${TM_FILENAME_BASE/\\.spec(\\.\\w+)?$/$1/} } from './${TM_FILENAME_BASE/\\.spec(\\.\\w+)?$/$1/}';",
+      "import { ${TM_FILENAME_BASE} } from './${TM_FILENAME_BASE}';",
       "",
       "/**",
       " * Mock Default.",
