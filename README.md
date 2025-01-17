@@ -19,6 +19,8 @@
 | переход в начало строки                       | `0`              |
 | переход к первому символу строки              | `_`              |
 | переход к концу строки                        | `$`              |
+| переход к предпоследнему открытому файлу      | `Ctrl` + `6`     |
+| переход к такому же слову                     | `*`              |
 
 ---
 
@@ -68,28 +70,37 @@ rm -rf  ~/.cache/nvim
 ### По шагам
 
 #### 1. Установите нужную конфигурацию в соответствующую директорию. Например:
+
 ```shell
 git clone https://github.com/bad4iz/AstroNVim_v4_config ~/.config/bad4izNvim
 ```
 
 #### 2. Запуск с разными конфигурациями
+
 ```shell
 NVIM_APPNAME=bad4izNvim nvim
 ```
 
 #### 3. Удобство с alias
+
 ```shell
 alias bn="NVIM_APPNAME=bad4izNvim nvim"
 ```
+
 Перезапустите терминал или выполните:
+
 ```shell
 source ~/.bashrc  # или source ~/.zshrc
 ```
+
 Теперь вы можете запускать конфигурации просто так:
+
 ```shell
 bn
 ```
+
 ### Или все вместе
+
 ```shell
 git clone https://github.com/bad4iz/AstroNVim_v4_config ~/.config/bad4izNvim
 echo 'alias bn="NVIM_APPNAME=bad4izNvim nvim"' >> ~/.zshrc
@@ -97,12 +108,7 @@ source ~/.zshrc
 ```
 
 Теперь вы можете запускать конфигурации просто так:
+
 ```shell
 bn
 ```
-
-
-
-
-
-
