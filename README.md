@@ -65,6 +65,13 @@ rm -rf  ~/.local/state/nvim
 rm -rf  ~/.cache/nvim
 ```
 
+
+```shell
+rm -rf ~/.local/share/bad4izNvim
+rm -rf  ~/.local/state/bad4izNvim
+rm -rf  ~/.cache/bad4izNvim
+```
+
 ## Создание отдельной конфигурации
 
 ### По шагам
