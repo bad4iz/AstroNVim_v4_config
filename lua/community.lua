@@ -19,7 +19,7 @@ return {
   -- { import = "astrocommunity.motion.nvim-surround", lazy = false },
   -- { import = "astrocommunity.motion.hop-nvim", lazy = false },
   { import = "astrocommunity.pack.typescript" },
-  -- { import = "astrocommunity.pack.tailwindcss", lazy = false },
+  { import = "astrocommunity.pack.tailwindcss", lazy = false },
   -- { import = "astrocommunity.pack.vue", lazy = false },
   { import = "astrocommunity.pack.lua", lazy = false },
   { import = "astrocommunity.pack.json", lazy = false },
