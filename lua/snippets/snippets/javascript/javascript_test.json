@@ -9,7 +9,7 @@
     "body": [
       "import { vi } from 'vitest';",
       "",
-      "import { ${TM_FILENAME_BASE} } from './${TM_FILENAME_BASE}';",
+      "import { ${TM_FILENAME_BASE/\\.spec(\\.\\w+)?$/$1/} } from './${TM_FILENAME_BASE}';",
       "",
       "/**",
       " * Mock Default.",
@@ -40,11 +40,11 @@
     ]
   },
   "describe enzyme wrapper": {
-    "prefix": "dte",
-    "description": "Desc  enzyme wrapper",
+    "prefix": "dts",
+    "description": "Desc  shallowly wrapper",
     "body": [
       "import React from 'react';",
-      "import { shallow } from 'enzyme';",
+      "import { shallow } from 'shallowly';",
       "import { vi } from 'vitest';",
       "",
       "",
@@ -62,13 +62,13 @@
       "   const wrapper = shallow(<${TM_FILENAME_BASE/\\.spec(\\.\\w+)?$/$1/} />);",
       "",
       "    //❓ Assert",
-      "    expect(wrapper.text()).toBe('oneb');",
+      "    expect(wrapper.textWithProps()).toMatchSnapshot();",
       "  })",
       "});"
     ]
   },
   "describe snapshot rtr": {
-    "prefix": "dts",
+    "prefix": "dtsn",
     "description": "Desc [snapshot] react test renderer",
     "body": [
       "import React from 'react';",
