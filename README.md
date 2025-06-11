@@ -109,7 +109,7 @@ bn
 ### Или все вместе
 
 ```shell
-git clone https://github.com/bad4iz/AstroNVim_v4_config ~/.config/bad4izNvim
+git clone git@github.com:bad4iz/AstroNVim_v4_config.git ~/.config/bad4izNvim
 echo 'alias bn="NVIM_APPNAME=bad4izNvim nvim"' >> ~/.zshrc
 source ~/.zshrc
 ```
