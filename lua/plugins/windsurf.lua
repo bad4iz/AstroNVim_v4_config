@@ -1,48 +1,41 @@
+-- Disabled in favor of neocodeium.lua
+if true then return {} end
+
 return {
-  "Exafunction/windsurf.nvim",
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "hrsh7th/nvim-cmp",
-  },
+  "Exafunction/windsurf.vim",
+  event = "User AstroFile",
   config = function()
-    require("codeium").setup {
-      enable_cmp_source = true,
-      virtual_text = {
-        enabled = true,
-
-        -- Эти значения по умолчанию
-
-        -- Установите в true, если вы никогда не хотите, чтобы подсказки появлялись автоматически.
-        manual = false,
-        -- Карта типов файлов, в которых включен виртуальный текст.
-        filetypes = {},
-        -- Включить виртуальный текст по умолчанию для типов файлов, не указанных выше.
-        default_filetype_enabled = true,
-        -- Сколько времени ожидать (в миллисекундах) перед запросом подсказок после остановки набора текста.
-        idle_delay = 75,
-        -- Приоритет виртуального текста. Это обычно гарантирует, что подсказки появляются поверх других плагинов, которые также добавляют виртуальный текст, таких как LSP встроенные подсказки, но может быть изменено по желанию.
-        virtual_text_priority = 65535,
-        -- Установите в false, чтобы отключить все клавиатурные комбинации для управления подсказками.
-        map_keys = true,
-        -- Клавиша, которую нужно нажать при нажатии клавиши принятия, но подсказка не показана.
-        -- По умолчанию это \t обычно или <c-n>, когда показывается всплывающее окно.
-        accept_fallback = nil,
-        -- Клавиатурные комбинации для управления подсказками в режиме виртуального текста.
-        key_bindings = {
-          -- Принять текущую подсказку.
-          accept = "<C-g>",
-          -- Принять следующее слово.
-          accept_word = false,
-          -- Принять следующую строку.
-          accept_line = false,
-          -- Очистить виртуальный текст.
-          clear = false,
-          -- Перейти к следующей подсказке.
-          next = "<M-]>",
-          -- Перейти к предыдущей подсказке.
-          prev = "<M-[>",
-        },
-      },
-    }
+    -- Default keymaps similar to codeium.vim structure
+    vim.keymap.set(
+      "i",
+      "<C-g>",
+      function() return vim.fn["windsurf#Accept"]() end,
+      { expr = true, desc = "Accept Windsurf suggestion" }
+    )
+    vim.keymap.set(
+      "i",
+      "<c-;>",
+      function() return vim.fn["windsurf#CycleCompletions"](1) end,
+      { expr = true, desc = "Next Windsurf suggestion" }
+    )
+    vim.keymap.set(
+      "i",
+      "<c-,>",
+      function() return vim.fn["windsurf#CycleCompletions"](-1) end,
+      { expr = true, desc = "Previous Windsurf suggestion" }
+    )
+    vim.keymap.set(
+      "i",
+      "<c-x>",
+      function() return vim.fn["windsurf#Clear"]() end,
+      { expr = true, desc = "Clear Windsurf suggestions" }
+    )
+    vim.keymap.set("n", "<leader>w", function()
+      if vim.g.windsurf_enabled == true then
+        vim.cmd "WindsurfDisable"
+      else
+        vim.cmd "WindsurfEnable"
+      end
+    end, { noremap = true, desc = "Toggle Windsurf active" })
   end,
 }

@@ -11,7 +11,7 @@ return {
       -- modify the sources part of the options table
       opts.sources = cmp.config.sources {
         -- { name = "cmp_tabnine", priority = 1010 },
-        { name = "codeium", priority = 1010 },
+        -- { name = "codeium", priority = 1010 }, -- Disabled in favor of neocodeium (inline suggestions)
         { name = "nvim_lsp", priority = 1000 },
         { name = "luasnip", priority = 750 },
         { name = "buffer", priority = 500 },
