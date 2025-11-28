@@ -1,4 +1,5 @@
--- Disabled in favor of neocodeium.lua
+-- Disabled: windsurf.vim только для inline подсказок
+-- Для nvim-cmp используйте codeium.nvim (тот же Windsurf AI)
 if true then return {} end
 
 return {
@@ -8,7 +9,7 @@ return {
     -- Default keymaps similar to codeium.vim structure
     vim.keymap.set(
       "i",
-      "<C-g>",
+      "<C-f>",
       function() return vim.fn["windsurf#Accept"]() end,
       { expr = true, desc = "Accept Windsurf suggestion" }
     )

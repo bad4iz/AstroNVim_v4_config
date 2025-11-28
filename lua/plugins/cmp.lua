@@ -8,15 +8,35 @@ return {
       -- opts parameter is the default options table
       -- the function is lazy loaded so cmp is able to be required
       local cmp = require "cmp"
+
+      -- ============================================================
+      -- ЦВЕТОВОЕ ВЫДЕЛЕНИЕ для AI помощников в меню cmp
+      -- ============================================================
+      -- Codeium (Windsurf) = БИРЮЗОВЫЙ (#00d7af)
+      -- Supermaven = ФИОЛЕТОВЫЙ (#d787ff)
+      -- LSP и другие = обычный цвет
+      -- ============================================================
+      vim.api.nvim_set_hl(0, "CmpItemKindCodeium", {
+        fg = "#00d7af", -- Яркий бирюзовый
+        bold = true,
+      })
+
+      vim.api.nvim_set_hl(0, "CmpItemKindSupermaven", {
+        fg = "#d787ff", -- Яркий фиолетовый
+        bold = true,
+      })
+
       -- modify the sources part of the options table
       opts.sources = cmp.config.sources {
-        -- { name = "cmp_tabnine", priority = 1010 },
-        -- { name = "codeium", priority = 1010 }, -- Disabled in favor of neocodeium (inline suggestions)
+        -- AI помощники с цветовым выделением:
+        { name = "supermaven", priority = 1010 }, -- ФИОЛЕТОВЫЙ (#d787ff)
+        { name = "codeium", priority = 1010 }, -- БИРЮЗОВЫЙ (#00d7af)
+        -- Стандартные источники:
         { name = "nvim_lsp", priority = 1000 },
         { name = "luasnip", priority = 750 },
+        { name = "emoji", priority = 700 },
         { name = "buffer", priority = 500 },
         { name = "path", priority = 250 },
-        { name = "emoji", priority = 700 }, -- add new source
       }
 
       opts.formatting = {
@@ -24,7 +44,7 @@ return {
           mode = "symbol",
           maxwidth = 50,
           ellipsis_char = "...",
-          symbol_map = { Codeium = "" },
+          symbol_map = { Codeium = "✨", Supermaven = "󱙺" },
         },
       }
       -- modify the mapping part of the table
