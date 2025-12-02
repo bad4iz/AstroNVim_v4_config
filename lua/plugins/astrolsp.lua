@@ -87,6 +87,26 @@ return {
           desc = "Declaration of current symbol",
           cond = "textDocument/declaration",
         },
+        gd = {
+          function() require("telescope.builtin").lsp_definitions() end,
+          desc = "Go to definition with Telescope",
+          cond = "textDocument/definition",
+        },
+        gI = {
+          function() require("telescope.builtin").lsp_implementations() end,
+          desc = "Go to implementation with Telescope",
+          cond = "textDocument/implementation",
+        },
+        gr = {
+          function() require("telescope.builtin").lsp_references() end,
+          desc = "Go to references with Telescope",
+          cond = "textDocument/references",
+        },
+        gy = {
+          function() require("telescope.builtin").lsp_type_definitions() end,
+          desc = "Go to type definition with Telescope",
+          cond = "textDocument/typeDefinition",
+        },
         ["<Leader>uY"] = {
           function() require("astrolsp.toggles").buffer_semantic_tokens() end,
           desc = "Toggle LSP semantic highlight (buffer)",
