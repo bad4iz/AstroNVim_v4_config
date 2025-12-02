@@ -11,6 +11,7 @@ return {
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
         "lua_ls",
         "vtsls", -- TypeScript/JavaScript LSP
+        "eslint", -- ESLint LSP for linting JS/TS
         "html", -- HTML LSP
         "cssls", -- CSS LSP
         "tailwindcss", -- Tailwind CSS LSP
@@ -18,19 +19,15 @@ return {
       })
     end,
   },
-  -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
+  -- Ensure formatters are installed for conform.nvim
   {
-    "jay-babu/mason-null-ls.nvim",
-    -- overrides `require("mason-null-ls").setup(...)`
-    opts = function(_, opts)
-      -- add more things to the ensure_installed table protecting against community packs modifying it
-      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    opts = {
+      ensure_installed = {
         "stylua", -- Lua formatter
-        "eslint_d", -- ESLint for linting and formatting JS/TS
         "prettier", -- Prettier for formatting
-        -- add more arguments for adding more null-ls sources
-      })
-    end,
+      },
+    },
   },
   {
     "jay-babu/mason-nvim-dap.nvim",

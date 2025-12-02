@@ -88,23 +88,78 @@ return {
           cond = "textDocument/declaration",
         },
         gd = {
-          function() require("telescope.builtin").lsp_definitions() end,
-          desc = "Go to definition with Telescope",
+          function()
+            local params = vim.lsp.util.make_position_params()
+            vim.lsp.buf_request(0, "textDocument/definition", params, function(_, result, ctx, _)
+              if not result or vim.tbl_isempty(result) then
+                vim.notify("No definition found", vim.log.levels.INFO)
+                return
+              end
+
+              -- Handle single result or array
+              local locations = vim.tbl_islist(result) and result or { result }
+
+              if #locations == 1 then
+                -- Jump directly if only one result
+                vim.lsp.util.jump_to_location(locations[1], "utf-8", true)
+              else
+                -- Show Telescope if multiple results
+                require("telescope.builtin").lsp_definitions { reuse_win = true }
+              end
+            end)
+          end,
+          desc = "Go to definition",
           cond = "textDocument/definition",
         },
         gI = {
-          function() require("telescope.builtin").lsp_implementations() end,
-          desc = "Go to implementation with Telescope",
+          function()
+            local params = vim.lsp.util.make_position_params()
+            vim.lsp.buf_request(0, "textDocument/implementation", params, function(_, result, ctx, _)
+              if not result or vim.tbl_isempty(result) then
+                vim.notify("No implementation found", vim.log.levels.INFO)
+                return
+              end
+
+              local locations = vim.tbl_islist(result) and result or { result }
+
+              if #locations == 1 then
+                vim.lsp.util.jump_to_location(locations[1], "utf-8", true)
+              else
+                require("telescope.builtin").lsp_implementations { reuse_win = true }
+              end
+            end)
+          end,
+          desc = "Go to implementation",
           cond = "textDocument/implementation",
         },
         gr = {
-          function() require("telescope.builtin").lsp_references() end,
-          desc = "Go to references with Telescope",
+          function()
+            require("telescope.builtin").lsp_references {
+              include_declaration = false,
+            }
+          end,
+          desc = "Go to references",
           cond = "textDocument/references",
         },
         gy = {
-          function() require("telescope.builtin").lsp_type_definitions() end,
-          desc = "Go to type definition with Telescope",
+          function()
+            local params = vim.lsp.util.make_position_params()
+            vim.lsp.buf_request(0, "textDocument/typeDefinition", params, function(_, result, ctx, _)
+              if not result or vim.tbl_isempty(result) then
+                vim.notify("No type definition found", vim.log.levels.INFO)
+                return
+              end
+
+              local locations = vim.tbl_islist(result) and result or { result }
+
+              if #locations == 1 then
+                vim.lsp.util.jump_to_location(locations[1], "utf-8", true)
+              else
+                require("telescope.builtin").lsp_type_definitions { reuse_win = true }
+              end
+            end)
+          end,
+          desc = "Go to type definition",
           cond = "textDocument/typeDefinition",
         },
         ["<Leader>uY"] = {
