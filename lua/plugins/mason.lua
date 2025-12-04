@@ -1,5 +1,16 @@
--- Customize Mason plugins
-
+-- Плагин Mason
+-- Менеджер для установки и управления LSP серверами, форматтерами и линтерами
+-- Упрощает установку инструментов разработки
+--
+-- Команды:
+--   :Mason - Открыть интерфейс Mason для установки инструментов
+--
+-- Автоматически устанавливаются:
+--   LSP серверы: lua_ls, vtsls, eslint, html, cssls, tailwindcss
+--   Форматтеры: stylua, prettier
+--   Отладчики: python
+--
+-- Добавьте нужные инструменты в список ensure_installed
 ---@type LazySpec
 return {
   -- use mason-lspconfig to configure LSP installations

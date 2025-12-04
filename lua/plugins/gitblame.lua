@@ -1,3 +1,8 @@
+-- Плагин Git Blame
+-- Отображает информацию git blame в виде виртуального текста
+-- Показывает краткое описание коммита, дату, автора и SHA для каждой строки
+-- Полезен для понимания истории кода и отслеживания изменений
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 return {
   "f-person/git-blame.nvim",
   -- load the plugin at startup

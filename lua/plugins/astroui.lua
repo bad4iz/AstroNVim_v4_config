@@ -1,3 +1,16 @@
+-- AstroUI - Конфигурация пользовательского интерфейса
+-- Настройка внешнего вида AstroNvim: цветовые схемы, иконки, подсветка
+--
+-- Настройки:
+--   - colorscheme = "astrodark" (цветовая схема по умолчанию)
+--   - Кастомные иконки для LSP загрузки
+--   - Переопределение highlight групп для любых тем
+--
+-- Для изменения темы:
+--   Измените значение colorscheme на нужную тему
+--   Доступны встроенные темы AstroNvim или установленные плагины
+--
+-- Документация: :h astroui
 -- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- AstroUI provides the basis for configuring the AstroNvim User Interface

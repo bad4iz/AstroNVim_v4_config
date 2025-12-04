@@ -1,3 +1,20 @@
+-- AstroCore - Ядро конфигурации AstroNvim
+-- Центральное место для настройки горячих клавиш, опций Vim и автокоманд
+--
+-- Основные настройки:
+--   - relativenumber = true (относительные номера строк)
+--   - wrap = false (без переноса строк)
+--   - scrolloff = 20 (отступ при скролле)
+--   - diagnostics_mode = 3 (все диагностики включены)
+--
+-- Кастомные горячие клавиши:
+--   <Tab>/<S-Tab> - Переключение между буферами
+--   <A-j>/<A-k> - Перемещение строк вверх/вниз
+--   gs - Сортировка
+--   ge/gE - Переход к следующей/предыдущей ошибке
+--   <leader>le - ESLint fix
+--
+-- Документация: :h astrocore
 -- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!

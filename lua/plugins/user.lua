@@ -1,3 +1,16 @@
+-- Пользовательские плагины
+-- Дополнительные плагины и настройки, не входящие в основную конфигурацию
+--
+-- Установленные плагины:
+--   - presence.nvim - Discord Rich Presence (показывает активность в Discord)
+--   - lsp_signature.nvim - подсказки сигнатур функций
+--   - alpha-nvim - стартовый экран с кастомным баннером "bad4iz nvim"
+--   - tokyonight.nvim - цветовая схема
+--   - vim-wakatime - трекинг времени программирования
+--   - emmet-vim - быстрое написание HTML/CSS
+--   - nvim-autopairs - автозакрытие скобок/кавычек (с кастомными правилами)
+--
+-- Для добавления новых плагинов просто добавьте запись в return таблицу
 -- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- You can also add or configure plugins by creating files in this `plugins/` folder

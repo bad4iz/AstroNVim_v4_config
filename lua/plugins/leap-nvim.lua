@@ -1,3 +1,13 @@
+-- Плагин Leap.nvim (ОТКЛЮЧЕН в пользу Flash)
+-- Альтернативный плагин для быстрой навигации по файлу
+-- Похож на EasyMotion/Hop - быстрые прыжки к любой позиции
+--
+-- Горячие клавиши:
+--   t  - Leap forward (прыжок вперед)
+--   T  - Leap backward (прыжок назад)
+--   gt - Leap from window (прыжок между окнами)
+--
+-- ОТКЛЮЧЕНО: используется Flash.nvim вместо этого плагина
 if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 return {

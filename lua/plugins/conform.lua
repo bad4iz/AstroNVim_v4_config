@@ -1,3 +1,19 @@
+-- Плагин Conform.nvim
+-- Современный плагин для форматирования кода
+-- Автоматически форматирует файлы при сохранении
+--
+-- ОТКЛЮЧЕНО по умолчанию
+-- Удалите строку ниже для активации
+--
+-- Настроенные форматтеры:
+--   Lua: stylua
+--   JS/TS/React: prettier
+--   HTML/CSS/SCSS: prettier
+--   JSON/YAML/Markdown: prettier
+--
+-- Настройки:
+--   - Форматирование при сохранении (timeout: 1000ms)
+--   - Fallback на LSP если форматтер не настроен
 if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 --
 --

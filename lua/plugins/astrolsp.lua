@@ -1,3 +1,19 @@
+-- AstroLSP - Конфигурация Language Server Protocol
+-- Централизованная настройка всех LSP функций в AstroNvim
+-- Управляет автодополнением, диагностикой, форматированием и навигацией
+--
+-- Включенные функции:
+--   - autoformat = true (автоформатирование при сохранении)
+--   - codelens = true (показ информации о ссылках/реализациях)
+--   - semantic_tokens = true (семантическая подсветка)
+--
+-- Горячие клавиши:
+--   gd - Перейти к определению
+--   gr - Найти ссылки
+--   gI - Перейти к реализации
+--   gy - Перейти к определению типа
+--
+-- Документация: :h astrolsp
 -- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
