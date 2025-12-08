@@ -1,3 +1,4 @@
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 -- Плагин Flash.nvim
 -- Быстрая навигация по файлу с помощью подсвеченных меток
 -- Позволяет моментально перемещаться к любому месту в видимом тексте
@@ -12,7 +13,13 @@ return {
   "folke/flash.nvim",
   event = "VeryLazy",
   ---@type Flash.Config
-  opts = {},
+  opts = {
+    modes = {
+      char = {
+        enabled = false, -- Отключает перехват f, F, t, T
+      },
+    },
+  },
   keys = {
     { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
     { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
