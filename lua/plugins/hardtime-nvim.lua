@@ -22,13 +22,25 @@ return {
       ["<End>"] = { "", "i" },
       ["<PageUp>"] = { "", "i" },
       ["<PageDown>"] = { "", "i" },
+      -- Убираем стрелочки из disabled_keys чтобы они не блокировались
+      ["<Up>"] = false,
+      ["<Down>"] = false,
+      ["<Left>"] = false,
+      ["<Right>"] = false,
     },
+    -- Используем restricted_keys для ограничения стрелочек только в normal/visual
     restricted_keys = {
+      ["h"] = { "n", "x" },
+      ["j"] = { "n", "x" },
+      ["k"] = { "n", "x" },
+      ["l"] = { "n", "x" },
       ["<Up>"] = { "n", "x" },
       ["<Down>"] = { "n", "x" },
       ["<Left>"] = { "n", "x" },
       ["<Right>"] = { "n", "x" },
     },
+    enabled = true,
+    allow_different_key = true,
   },
   config = function(_, opts)
     require("hardtime").setup(opts)
