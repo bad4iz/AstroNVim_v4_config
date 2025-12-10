@@ -14,7 +14,7 @@
 -- Настройки:
 --   - Форматирование при сохранении (timeout: 1000ms)
 --   - Fallback на LSP если форматтер не настроен
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 --
 --
 -- Conform.nvim - modern formatting plugin
